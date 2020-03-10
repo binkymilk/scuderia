@@ -3,21 +3,22 @@
  */
 
 import * as React from 'react'
+import styled from 'styled-components'
+import { color, ColorProps, space, SpaceProps } from 'styled-system'
 
-import styles from './styles.css'
+type BaseHeadingProps = ColorProps & SpaceProps
 
-export type Props = { text: string }
+const BaseHeading: React.FC<BaseHeadingProps> = styled.h1<
+  BaseHeadingProps
+>`
+  ${color}
+  ${space}
+`
 
-export default class ExampleComponent extends React.Component<Props> {
-  render() {
-    const {
-      text
-    } = this.props
+const YellowHeading: React.FC<BaseHeadingProps> = (
+  props: BaseHeadingProps
+) => <BaseHeading {...props} />
 
-    return (
-      <div className={styles.test}>
-        Example Component: {text}
-      </div>
-    )
-  }
-}
+console.log(YellowHeading)
+
+export default YellowHeading

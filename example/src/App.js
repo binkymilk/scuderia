@@ -1,13 +1,16 @@
 import React, { Component } from 'react'
 
-import ExampleComponent from 'scuderia'
+import YellowHeading from 'scuderia'
 
-export default class App extends Component {
-  render () {
-    return (
-      <div>
-        <ExampleComponent text='Modern React component module' />
-      </div>
-    )
-  }
+const App = () => {
+  console.log(<YellowHeading />)
+  return (
+    <div>
+      <YellowHeading p='15px' as='h2'>
+        YellowHeading
+      </YellowHeading>
+    </div>
+  )
 }
+
+export default App
